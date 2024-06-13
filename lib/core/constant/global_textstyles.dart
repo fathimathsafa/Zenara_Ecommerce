@@ -17,4 +17,6 @@ class GlobalTextStyles {
       fontSize: 20,
       color: ColorTheme.secondarycolor,
       fontWeight: FontWeight.bold);
+  static TextStyle advertise = GoogleFonts.poppins(
+      fontSize: 20, fontWeight: FontWeight.bold, color: ColorTheme.black);
 }
