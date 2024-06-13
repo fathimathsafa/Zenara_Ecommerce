@@ -1,3 +1,4 @@
+import 'package:ecommerce_zenara/presentation/home_screen/view/home_screen.dart';
 import 'package:ecommerce_zenara/presentation/splash_screen/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash_newex1(),
+      home: SplashScreen(),
     );
   }
 }

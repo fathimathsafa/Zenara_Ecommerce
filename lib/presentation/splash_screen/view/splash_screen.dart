@@ -4,14 +4,13 @@ import 'package:ecommerce_zenara/core/constant/color_constant.dart';
 import 'package:ecommerce_zenara/core/constant/global_textstyles.dart';
 import 'package:ecommerce_zenara/presentation/welcome_screen/view/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class Splash_newex1 extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   @override
-  State<Splash_newex1> createState() => _Splash_newex1State();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _Splash_newex1State extends State<Splash_newex1> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 5), () {

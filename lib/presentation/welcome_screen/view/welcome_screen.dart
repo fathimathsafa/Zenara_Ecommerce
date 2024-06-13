@@ -1,3 +1,5 @@
+import 'package:ecommerce_zenara/core/constant/color_constant.dart';
+import 'package:ecommerce_zenara/core/constant/global_textstyles.dart';
 import 'package:ecommerce_zenara/presentation/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -6,12 +8,14 @@ import 'package:google_fonts/google_fonts.dart';
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.sizeOf(context);
+
     return Scaffold(
         body: Center(
       child: Column(
         children: [
           SizedBox(
-            height: 30,
+            height: size.height * .01,
           ),
           Container(
             height: MediaQuery.of(context).size.height / 1.45,
@@ -64,41 +68,30 @@ class WelcomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Text(
-            "EXPLORE THE BEST",
-            style: GoogleFonts.josefinSans(
-                color: Color(0xFF795548),
-                fontSize: 30,
-                fontWeight: FontWeight.bold),
-          ),
+          Text("EXPLORE THE BEST", style: GlobalTextStyles.Welcomedtitle),
           SizedBox(
-            height: 5,
+            height: size.height * .001,
           ),
-          Text(
-            "Transform ordinary into extraordinary ",
-            style:
-                GoogleFonts.josefinSans(color: Color(0xFF795548), fontSize: 23),
-          ),
-          Text(
-            "with our accessories.",
-            style:
-                GoogleFonts.josefinSans(color: Color(0xFF795548), fontSize: 23),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          MaterialButton(
+          Text("Transform Extraordinary to  ",
+              style: GlobalTextStyles.Welcomedtitle2),
+          Text("with our accessories.", style: GlobalTextStyles.Welcomedtitle2),
+          SizedBox(height: size.height * 0.03),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: ColorTheme.maincolor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20))),
             onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => BottomNavigation_ex()));
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                      builder: (context) => BottomNavigation_ex()),
+                  (route) => false);
             },
-            color: Color(0xFF795548),
-            shape: StadiumBorder(),
             child: Text(
-              "Let's Get Started",
-              style: GoogleFonts.josefinSans(color: Colors.white, fontSize: 18),
+              "Let's Get Started ",
+              style: TextStyle(color: ColorTheme.secondarycolor),
             ),
-          )
+          ),
         ],
       ),
     ));

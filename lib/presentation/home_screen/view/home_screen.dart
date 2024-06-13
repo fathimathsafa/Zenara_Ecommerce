@@ -1,47 +1,17 @@
-import 'package:ecommerce_zenara/presentation/whishlist_screen/view/whishlist_screen.dart';
+import 'package:ecommerce_zenara/presentation/home_screen/widget/category_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-
-
-
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final controller = PageController();
-    return Scaffold(
-      body: SafeArea(
-          child: CustomScrollView(
+    MediaQuery.sizeOf(context);
+    // final controller = PageController();
+    return SafeArea(
+        child: Scaffold(
+      body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                child: Container(
-                  height: 5,
-                  width: 5,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xFF795548),
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Z",
-                      style: GoogleFonts.dmSerifDisplay(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            leading: Icon(null),
             actions: [
               Row(
                 children: [
@@ -54,8 +24,8 @@ class HomeScreen extends StatelessWidget {
                       )),
                   IconButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => WhishlistScreen()));
+                        // Navigator.of(context).push(MaterialPageRoute(
+                        //     builder: (context) => WhishlistScreen()));
                       },
                       icon: Icon(
                         Icons.favorite,
@@ -73,6 +43,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
             bottom: AppBar(
+              automaticallyImplyLeading: false,
+              // leading: SizedBox(),
               title: Container(
                 height: 55,
                 width: double.infinity,
@@ -94,156 +66,39 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SliverPadding(padding: EdgeInsets.only(top: 10)),
-          SliverToBoxAdapter(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Bags_Cate()));
-                    },
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/icons/bag.png"),
-                      radius: 35,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Bags_Cate()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/belt.png"),
-                        radius: 35),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Watch_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/watch.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Shoe_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/shoe.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Ring_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/Ring.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Neck_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/neck.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Hair_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/hair.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Ear_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/ear.png"),
-                        radius: 33),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.of(context).push(
-                      //     MaterialPageRoute(builder: (context) => Brace_Cat()));
-                    },
-                    child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/icons/brace.png"),
-                        radius: 33),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          SliverToBoxAdapter(child: Expanded(child: CategorySlider())),
           SliverPadding(padding: EdgeInsets.all(5)),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 280,
-                  child: PageView(
-                    controller: controller,
-                    children: [
-                      page1(),
-                      page2(),
-                      page3(),
-                      page4(),
-                      page5(),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                SmoothPageIndicator(
-                  controller: controller,
-                  count: 5,
-                  effect: SwapEffect(
-                      activeDotColor: Color(0xFF795548),
-                      dotColor: Colors.grey,
-                      dotWidth: 10,
-                      dotHeight: 10),
-                ),
-              ],
-            ),
-          ),
+          // SliverToBoxAdapter(
+          //   child: Column(
+          //     children: [
+          //       SizedBox(
+          //         height: 280,
+          //         child: PageView(
+          //           controller: controller,
+          //           children: [
+          //             page1(),
+          //             page2(),
+          //             page3(),
+          //             page4(),
+          //             page5(),
+          //           ],
+          //         ),
+          //       ),
+          //       SizedBox(
+          //         height: 10,
+          //       ),
+          //       SmoothPageIndicator(
+          //         controller: controller,
+          //         count: 5,
+          //         effect: SwapEffect(
+          //             activeDotColor: Color(0xFF795548),
+          //             dotColor: Colors.grey,
+          //             dotWidth: 10,
+          //             dotHeight: 10),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           SliverToBoxAdapter(
             child: Column(
               children: [
@@ -288,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      "assets/Discounts/sling_bag.jpeg"),
+                                      "assets/discounts/sling_bag.jpeg"),
                                   fit: BoxFit.fitHeight,
                                 ),
                                 color: Colors.white,
@@ -322,7 +177,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Shoe_Cat()),
                         //         (route) => false);
@@ -345,7 +200,8 @@ class HomeScreen extends StatelessWidget {
                               width: 170,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage("assets/Discounts/foot.jpeg"),
+                                  image:
+                                      AssetImage("assets/discounts/foot.jpeg"),
                                   fit: BoxFit.fill,
                                 ),
                                 color: Colors.white,
@@ -375,8 +231,6 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-
                   ],
                 ),
                 SizedBox(
@@ -388,7 +242,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Ring_Cat()),
                         //         (route) => false);
@@ -411,7 +265,8 @@ class HomeScreen extends StatelessWidget {
                               width: 170,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage("assets/Discounts/Ring.jpeg"),
+                                  image:
+                                      AssetImage("assets/discounts/Ring.jpeg"),
                                   fit: BoxFit.fill,
                                 ),
                                 color: Colors.white,
@@ -445,7 +300,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Belts_Cat()),
                         //         (route) => false);
@@ -469,7 +324,7 @@ class HomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image:
-                                      AssetImage("assets/Discounts/Belts.jpeg"),
+                                      AssetImage("assets/discounts/Belts.jpeg"),
                                   fit: BoxFit.fill,
                                 ),
                                 color: Colors.white,
@@ -500,7 +355,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
 
-//
+                    //
                   ],
                 ),
                 Padding(
@@ -519,7 +374,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Watch_Cat()),
                         //         (route) => false);
@@ -577,7 +432,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Neck_Cat()),
                         //         (route) => false);
@@ -642,7 +497,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Hair_Cat()),
                         //         (route) => false);
@@ -700,7 +555,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Ear_Cat()),
                         //         (route) => false);
@@ -772,7 +627,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Brace_Cat()),
                         //         (route) => false);
@@ -830,7 +685,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Shoe_Cat()),
                         //         (route) => false);
@@ -895,7 +750,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Bags_Cate()),
                         //         (route) => false);
@@ -953,7 +808,7 @@ class HomeScreen extends StatelessWidget {
                       width: 10,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         // Navigator.of(context).pushAndRemoveUntil(
                         //     MaterialPageRoute(builder: (context) => Ring_Cat()),
                         //         (route) => false);
@@ -976,8 +831,8 @@ class HomeScreen extends StatelessWidget {
                               width: 170,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image:
-                                      AssetImage("assets/Home/accessories.jpeg"),
+                                  image: AssetImage(
+                                      "assets/Home/accessories.jpeg"),
                                   fit: BoxFit.fill,
                                 ),
                                 color: Colors.white,
@@ -1013,8 +868,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      )),
-    );
+      ),
+    ));
   }
 }
 
@@ -1040,7 +895,7 @@ class page1 extends StatelessWidget {
                 width: 390,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/Home/Bagsss.jpeg"),
+                      image: AssetImage("assets/home/Bagsss.jpeg"),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10),
                 )),
@@ -1073,7 +928,7 @@ class page2 extends StatelessWidget {
                 width: 390,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/Home/footwearr.jpeg"),
+                      image: AssetImage("assets/home/footwearr.jpeg"),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10),
                 )),
@@ -1106,7 +961,7 @@ class page3 extends StatelessWidget {
                 width: 390,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/Home/glasss.jpeg"),
+                      image: AssetImage("assets/home/glasss.jpeg"),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10),
                 )),
@@ -1139,7 +994,7 @@ class page4 extends StatelessWidget {
                 width: 390,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/Home/accessories.jpeg"),
+                      image: AssetImage("assets/home/accessories.jpeg"),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10),
                 )),
@@ -1172,7 +1027,7 @@ class page5 extends StatelessWidget {
                 width: 390,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/Home/watch.jpeg"),
+                      image: AssetImage("assets/home/watch.jpeg"),
                       fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10),
                 )),
