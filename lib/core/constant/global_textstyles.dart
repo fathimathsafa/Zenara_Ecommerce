@@ -19,4 +19,6 @@ class GlobalTextStyles {
       fontWeight: FontWeight.bold);
   static TextStyle advertise = GoogleFonts.poppins(
       fontSize: 20, fontWeight: FontWeight.bold, color: ColorTheme.black);
+  static TextStyle CardText = GoogleFonts.poppins(
+      fontSize: 15, color: ColorTheme.maincolor, fontWeight: FontWeight.bold);
 }

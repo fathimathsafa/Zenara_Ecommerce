@@ -4,10 +4,6 @@ import 'package:ecommerce_zenara/presentation/profile_screen/view/profile_screen
 import 'package:ecommerce_zenara/presentation/whishlist_screen/view/whishlist_screen.dart';
 import 'package:flutter/material.dart';
 
-
-
-
-
 class BottomNavigation_ex extends StatefulWidget {
   @override
   State<BottomNavigation_ex> createState() => _BottomNavigation_exState();
@@ -59,7 +55,7 @@ class _BottomNavigation_exState extends State<BottomNavigation_ex> {
               label: ''),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.account_circle_rounded,
+                Icons.person,
                 color: Color(0xFF795548),
                 size: 35,
               ),
