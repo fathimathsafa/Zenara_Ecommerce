@@ -21,4 +21,13 @@ class GlobalTextStyles {
       fontSize: 20, fontWeight: FontWeight.bold, color: ColorTheme.black);
   static TextStyle CardText = GoogleFonts.poppins(
       fontSize: 15, color: ColorTheme.maincolor, fontWeight: FontWeight.bold);
+  static TextStyle brand = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold, color: ColorTheme.black, fontSize: 18);
+  static TextStyle rating = GoogleFonts.poppins(
+    color: ColorTheme.secondarycolor,
+  );
+  static TextStyle productName = GoogleFonts.poppins(
+      fontWeight: FontWeight.normal, fontSize: 15, color: ColorTheme.black);
+      static TextStyle delivery = GoogleFonts.poppins(
+      fontWeight: FontWeight.bold, fontSize: 15, color: ColorTheme.black);
 }

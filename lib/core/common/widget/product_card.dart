@@ -1,6 +1,7 @@
 import 'package:ecommerce_zenara/core/constant/color_constant.dart';
+import 'package:ecommerce_zenara/core/constant/global_textstyles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class ProductCategory extends StatelessWidget {
   final ImageProvider Productimage;
@@ -33,38 +34,56 @@ class ProductCategory extends StatelessWidget {
                       DecorationImage(image: Productimage, fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(10)),
             ),
-            SizedBox(
-              height: 7,
-            ),
             Padding(
               padding: const EdgeInsets.only(right: 100),
-              child: Text(
-                Brand,
-                style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.bold,
-                    color: ColorTheme.black,
-                    fontSize: 18),
-              ),
+              child: Text(Brand, style: GlobalTextStyles.brand),
             ),
-            Text(name),
-            Row(
-              children: [
-                Icon(Icons.currency_rupee),
-                Text(price),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(right: 60),
+              child: Text(name, style: GlobalTextStyles.productName),
             ),
-            MaterialButton(
-              onPressed: () {},
-              height: 35,
-              minWidth: 50,
+            Padding(
+              padding: const EdgeInsets.only(left: 5),
               child: Row(
                 children: [
-                  Text(rating),
-                  Icon(Icons.star),
+                  Icon(
+                    Icons.currency_rupee,
+                    size: 20,
+                  ),
+                  Text(price, style: GlobalTextStyles.advertise),
                 ],
               ),
             ),
-            Text("Free Delivery")
+            Padding(
+              padding: const EdgeInsets.only(right: 120),
+              child: Container(
+                height: 25,
+                width: 50,
+                decoration: BoxDecoration(
+                    color: ColorTheme.maincolor,
+                    borderRadius: BorderRadius.circular(30)),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text(
+                        rating,
+                        style: GlobalTextStyles.rating,
+                      ),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 15,
+                      color: ColorTheme.secondarycolor,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 60),
+              child: Text("Free Delivery", style: GlobalTextStyles.delivery),
+            )
           ],
         ),
       ),

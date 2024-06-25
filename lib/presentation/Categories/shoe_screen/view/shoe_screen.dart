@@ -1,12 +1,9 @@
-
 import 'package:ecommerce_zenara/core/common/widget/product_card.dart';
 import 'package:ecommerce_zenara/core/constant/color_constant.dart';
 import 'package:ecommerce_zenara/presentation/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:flutter/material.dart';
 
-class BagScreen extends StatelessWidget {
-  const BagScreen({super.key});
-
+class ShoeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,8 +65,8 @@ class BagScreen extends StatelessWidget {
             itemCount: 6,
             itemBuilder: (context, index) => ProductCategory(
                   Productimage: AssetImage(
-                      "assets/bags/Meghan Markle Made These Bags So Popular, They Just Won't Stay in Stock.jpeg"),
-                  Brand: 'ABCDEF',
+                      "assets/bags/2022 Women Sandal Designer Pumps Spring Summer Luxury Cover Heels Shoe Fashion Slides Casual Platform Apricot-36.jpeg"),
+                  Brand: 'SDFGVH',
                   name: 'abcdefg hijjgk',
                   price: '200',
                   rating: '3.4',
