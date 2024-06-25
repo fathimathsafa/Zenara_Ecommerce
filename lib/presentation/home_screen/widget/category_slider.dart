@@ -1,5 +1,6 @@
 import 'package:ecommerce_zenara/presentation/categories/bag_screen/view/bag_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/belt_screen/view/belt_screen.dart';
+import 'package:ecommerce_zenara/presentation/categories/ring_screen/view/ring_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/shoe_screen/view/shoe_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/watch_screen/view/watch_screen.dart';
 import 'package:flutter/material.dart';
@@ -69,8 +70,8 @@ class CategorySlider extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Navigator.of(context).push(
-                //     MaterialPageRoute(builder: (context) => Ring_Cat()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RingScreen()));
               },
               child: CircleAvatar(
                   backgroundImage: AssetImage("assets/icons/Ring.png"),
