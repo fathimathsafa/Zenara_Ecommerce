@@ -1,6 +1,7 @@
 import 'package:ecommerce_zenara/presentation/categories/bag_screen/view/bag_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/belt_screen/view/belt_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/chain_screen/view/chain_screen.dart';
+import 'package:ecommerce_zenara/presentation/categories/earring_screen/view/earring_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/hair_accessories_screen/view/hair_accessories.dart';
 import 'package:ecommerce_zenara/presentation/categories/ring_screen/view/ring_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/shoe_screen/view/shoe_screen.dart';
@@ -108,8 +109,8 @@ class CategorySlider extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Navigator.of(context).push(
-                //     MaterialPageRoute(builder: (context) => Ear_Cat()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => EarringScreen()));
               },
               child: CircleAvatar(
                   backgroundImage: AssetImage("assets/icons/ear.png"),
