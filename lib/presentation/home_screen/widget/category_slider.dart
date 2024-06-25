@@ -1,5 +1,6 @@
 import 'package:ecommerce_zenara/presentation/categories/bag_screen/view/bag_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/belt_screen/view/belt_screen.dart';
+import 'package:ecommerce_zenara/presentation/categories/bracelets_screen/view/bracelets_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/chain_screen/view/chain_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/earring_screen/view/earring_screen.dart';
 import 'package:ecommerce_zenara/presentation/categories/hair_accessories_screen/view/hair_accessories.dart';
@@ -121,8 +122,8 @@ class CategorySlider extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // Navigator.of(context).push(
-                //     MaterialPageRoute(builder: (context) => Brace_Cat()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => BraceletsScreen()));
               },
               child: CircleAvatar(
                   backgroundImage: AssetImage("assets/icons/brace.png"),
