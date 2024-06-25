@@ -1,5 +1,5 @@
+import 'package:ecommerce_zenara/presentation/Categories/Bag_Screen/view/Bag_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class CategorySlider extends StatelessWidget {
   const CategorySlider({super.key});
@@ -16,7 +16,10 @@ class CategorySlider extends StatelessWidget {
               width: size.width * .01,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => BagScreen()));
+              },
               child: CircleAvatar(
                 backgroundImage: AssetImage("assets/icons/bag.png"),
                 radius: 35,
